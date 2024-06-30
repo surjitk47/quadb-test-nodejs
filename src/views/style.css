@@ -1,0 +1,82 @@
+
+
+
+
+body,html{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+background-color: #191d28;
+}
+
+h1{
+    color: #fff;
+    font-size: 80px;
+    text-align: center;
+    margin: 40px 0;
+    font-family: "Oswald", sans-serif;
+}
+
+th{
+    font-family: "Oswald", sans-serif;
+    color: #818389;
+    font-size: 24px;
+    padding: 15px;
+    text-align: center;
+}
+
+td{
+    font-family: "Oswald", sans-serif;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 15px;
+    text-align: center;
+}
+tr{
+    background-color: #2e3241;
+    border-radius: 10px 0 0 10px;
+}
+.headingRow{
+    background-color: transparent;
+}
+
+table#tickers-table {
+    padding: 60px 20px;
+    width: 100%;
+}
+
+
+
+#logo img{
+    width: 400px;
+    height: auto;
+    padding: 10px;
+}
+footer{
+    color: #818389;
+    padding: 20px 20px 40px 20px;
+    border-top: 2px solid #818389; 
+    font-family: "Oswald", sans-serif;
+}
+
+@media only screen and (max-width:991px){
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+}
+
+@media only screen and (max-width:767px){
+    #logo img {
+        width: 200px;
+    }
+    #logo  {
+        text-align: center;
+    }
+    h1 {
+        color: #fff;
+        font-size: 40px;
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>WazirX Tickers</title>
+</head>
+<body>
+    <div id="logo"><img src="./assets/logo.png" alt=""></div>
+  <h1>Top 10 WazirX Tickers</h1>
+  <table id="tickers-table" >
+    <thead>
+      <tr class="headingRow">
+        <th>#</th>
+        <th>Name</th>
+        <th>Last</th>
+        <th>Buy</th>
+        <th>Sell</th>
+        <th>Volume</th>
+        <th>Base Unit</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+
+<footer>
+    Copyright © 2019
+HodlInfo.com
+</footer>
+
+  <script>
+    fetch('/api/tickers')
+      .then(response => response.json())
+      .then(data => {
+        const tableBody = document.querySelector('#tickers-table tbody');
+        data.forEach(ticker => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+           <td>${ticker.id}</td>
+            <td>${ticker.name}</td>
+            <td>${ticker.last}</td>
+            <td>${ticker.buy}</td>
+            <td>${ticker.sell}</td>
+            <td>${ticker.volume}</td>
+            <td>${ticker.base_unit}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  </script>
+</body>
+</html>
